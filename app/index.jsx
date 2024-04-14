@@ -4,8 +4,13 @@ import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
 import CustomButton from "../components/CustomButton";
+import { useGlobalContext } from "../context/GlobalProvidder";
 
 export default function App() {
+  const { isLoading,isLoggedIn } = useGlobalContext();
+
+  if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
@@ -41,13 +46,15 @@ export default function App() {
 
           <CustomButton
             title="Continue with Email"
-            handlePress={() => {router.push('/sign-in')}}
+            handlePress={() => {
+              router.push("/sign-in");
+            }}
             containerStyles="w-full mt-7"
           />
         </View>
 
         {/* Status Bar */}
-        <StatusBar style="light" backgroundColor="#161622"/>
+        <StatusBar style="light" backgroundColor="#161622" />
       </ScrollView>
     </SafeAreaView>
   );

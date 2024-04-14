@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { Slot, SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import GlobalProvider from "../context/GlobalProvidder";
 
 //Prevent the splash screen from auto hiding before the assets are loaded
 SplashScreen.preventAutoHideAsync();
@@ -30,6 +31,7 @@ const RootLayout = () => {
   if (!fontsLoaded && !error) return null;
 
   return (
+    <GlobalProvider>
     <Stack>
       <Stack.Screen
         name="index"
@@ -52,6 +54,7 @@ const RootLayout = () => {
         }}
       />
     </Stack>
+    </GlobalProvider>
   );
 };
 
