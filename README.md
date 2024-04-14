@@ -294,4 +294,29 @@ And if you're hungry for more than just a course and want to understand how we l
 <img src="https://github.com/sujatagunale/EasyRead/assets/151519281/fed352ad-f27b-400d-9b8f-c7fe628acb84" alt="Project Banner">
 </a>
 
-#
+# Appwrite
+
+1. 🤖 Create Project
+2. ⚙️ Make an sdk(package) and update app.json (ios and android)
+    ```javascript
+     "package": "com.kuldeep.aora"
+    ```
+    
+3. 🔋 Make Database and Collections and their Attributes
+4. 🤸 Make Storage Bucket
+5. 🕸️ Also remember to give crud permissions to appropriate users 
+6. Also update Allowed file Extensions in Bucket
+7. install npx expo install react-native-appwrite react-native-url-polyfill (Client SDK)
+```javascript
+import { Client } from 'react-native-appwrite';
+// Init your react-native SDK
+const client = new Client();
+
+client
+    .setEndpoint('http://localhost/v1') // Your Appwrite Endpoint
+    .setProject('455x34dfkj') // Your project ID
+    .setPlatform('com.example.myappwriteapp') // Your application ID or bundle ID.
+;
+```
+
+
