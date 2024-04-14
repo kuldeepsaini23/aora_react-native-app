@@ -68,6 +68,7 @@ const TabsLayout = () => {
       >
         {TabsIconsInfo.map((tab) => (
           <Tabs.Screen
+          key={tab.id}
             name={tab.name}
             options={{
               title: tab.title,
