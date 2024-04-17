@@ -320,3 +320,6 @@ client
 ```
 
 
+
+- Why we cannot wrap Home in scrollview?
+ - because we are using flatlist which is already scrollable and also scrollview is not recommended to be used with flatlist because it doesnot support both horizontal and vertical scrolling at the same time.
