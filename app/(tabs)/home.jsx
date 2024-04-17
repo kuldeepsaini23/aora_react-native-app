@@ -16,13 +16,14 @@ import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import useAppwrite from "../../lib/useAppWrite";
 import VideoCard from "../../components/VideoCard";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Home = () => {
   const { data:posts, isLoading, refetch} = useAppwrite(getAllPosts); 
 
   const { data:latestPosts} = useAppwrite(getLatestPosts); 
 
-
+  const { user } = useGlobalContext();
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = async () => {
@@ -50,7 +51,7 @@ const Home = () => {
                   Welcome Back
                 </Text>
                 <Text className="font-pmedium text-2xl text-white">
-                  Kuldeep Saini
+                  {user?.username}
                 </Text>
               </View>
               {/* Image */}

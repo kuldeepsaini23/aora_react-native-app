@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { Slot, SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
-import GlobalProvider from "../context/GlobalProvidder";
+import GlobalProvider from "../context/GlobalProvider";
 
 //Prevent the splash screen from auto hiding before the assets are loaded
 SplashScreen.preventAutoHideAsync();

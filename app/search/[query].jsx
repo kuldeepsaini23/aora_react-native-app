@@ -1,13 +1,9 @@
 import { View, Text, FlatList, Image } from "react-native";
 import React, { useEffect, useState } from "react";
-import { images } from "../../constants";
 import SearchInput from "../../components/SearchInput";
 import { StatusBar } from "expo-status-bar";
 import EmptyState from "../../components/EmptyState";
 import {
-  getAllPosts,
-  getLatestPosts,
-  getSearchPosts,
   searchPosts,
 } from "../../lib/appwrite";
 import useAppwrite from "../../lib/useAppWrite";
