@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  SafeAreaView,
   FlatList,
   Image,
   RefreshControl,
@@ -16,6 +15,7 @@ import EmptyState from "../../components/EmptyState";
 import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import useAppwrite from "../../lib/useAppWrite";
 import VideoCard from "../../components/VideoCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   const { data:posts, isLoading, refetch} = useAppwrite(getAllPosts); 
@@ -42,7 +42,7 @@ const Home = () => {
          <VideoCard video={item}/>
         )}
         ListHeaderComponent={() => (
-          <View className="my-6 px-4 space-y-6 mt-16">
+          <View className="my-6 px-4 space-y-6">
             <View className="justify-between items-start flex-row mb-6">
               {/* Text */}
               <View>
